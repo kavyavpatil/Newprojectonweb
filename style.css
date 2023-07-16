@@ -1,0 +1,32 @@
+header{
+    text-align: center;
+    background-color: gray;
+    height: 50px;
+}
+.contanct{
+    text-align: center;
+    background-color: aquamarine;
+}
+.fa fa-search{
+    background-color: blueviolet;
+
+}
+
+
+.header{
+background-color:navajowhite;
+}
+#List-imp{
+    width: 50%;
+}
+#btn{
+    background-color:beige
+}
+#btncancel{
+    background-color:beige
+}
+footer{
+    text-align: center;
+    background-color: grey;
+    height: 50px;
+}

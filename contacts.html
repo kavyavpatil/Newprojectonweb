@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="scriptsheet" href="script.js">
+</head>
+<body>
+    <header>
+       
+            <p>HEADER COMES HERE</p>
+        
+        
+    </header>
+    <hr>
+    <h1 class="contanct" >Contact Management System</h1>
+    <div class="Cont">
+        <form action="">
+       
+            <div class="search-wrapper">
+            <pre>Contacts</pre>
+            <input 
+            type="text"
+            id="List-imp"
+            placeholder="search... "
+            onkeyup="searchFun()"
+             >
+            <label ><button style="background-color:purple;"  for="List-imp"  class="fa fa-search">SEARCH</button></label>
+            
+            
+            </div>
+        </form>
+        
+        <nav class="crc">
+            
+            <a href="create.html"><label ><button  style="background-color: cadetblue;" for="List-imp"  class="fa fa-search">Create Contact</button></label> </a>
+            
+        </nav>
+    </div>
+    <hr />
+    <main>
+            <table id="myTable">
+            <tr class="header">
+                <th style="width:10%">Name</th>
+                <th style="width:10%">Mobile</th>
+                <th style="width:10%">Email</th>
+                <th style="width:10%">Organization</th>
+                <th style="width:10%">Job Title</th>
+                <th style="width:10%">Address</th>
+                <th style="width:10%">Options</th>
+            </tr>
+            <tr>
+                <div id="contact-list">
+            
+                    <div id="ccc">
+                
+                    <td><p id="namedisplay">Amarnth T R</p></td>
+                    <td><p id="mobiledisplay">9886098860</p></td>
+                    <td><p id="emaildisplay">amarnth@gmail.com</p></td>
+                    <td><p id="organizationdisplay">Global Gateway</p></td>
+                    <td><p id="jobtitledisplay">Manager</p></td>
+                    <td><p id="addressdisplay">33 Kengeri Bangalore</p></td>
+                    <td><button ><nav class="crc">
+            
+                        <a href="create.html" href="edit.html">Create</a>
+                        <a href="edit.html">Edit</a>
+                        
+                    </nav>
+                </button>
+                </td>
+                </div>
+                </div>
+                    
+                
+                
+            </tr>
+
+            
+        </table>
+        
+
+        
+    </main>
+    <script>
+        const searchFun =() =>{
+            let filter = document.getElementById('List-imp').value.toUpperCase();
+
+            let myTable = document.getElementById('myTable');
+            let tr= myTable.getElementsByTagName('tr');
+            for(var i=0;i<tr.length;i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+                if(td){
+                    let textvalue = td.textcontent || td.innerHTML;
+                    if(textvalue.toUpperCase().indexOf(filter) > -1){
+                        tr[i].style.display=" ";
+
+                    }
+                    else{
+                        tr[i].style.display=" none";
+                    }
+                }
+            }
+
+    
+        const btn = document.getElementById("btn");
+            const btncancel = document.getElementById("btncancel");
+            const name = document.getElementById("name");
+            const mobile = document.getElementById("mobile");
+            const email = document.getElementById("email");
+            const organization = document.getElementById("organization");
+            const jobtitle = document.getElementById("jobtitle");
+            const notes = document.getElementById("notes");
+            const contactList = document.getElementById("contact-list");
+    
+            btn.addEventListener("click",function(e)
+            {
+                e.preventDefault()
+                const isvalid= form.checkValidity()
+                console.log(isvalid)
+                console.log(name.value)
+                console.log(mobile.value)
+                console.log(email.value)
+                console.log(organization.value)
+                console.log(jobtitle.value)
+                console.log(notes.value)
+                createcontact()
+                name.value="";
+                mobile.value="";
+                email.value="";
+                organization.value="";
+                jobtitle.value="";
+                notes.value="";
+
+
+    
+            })
+            function createcontact(){
+                const plate = document.createElement("div");
+                plate.setAttribute("id","ccc");
+                plate.innerHTML=
+                  <><p id="namedisplay">${name.value}</p><p id="mobiledisplay">${mobile.value}</p><p id="emaildisplay">${email.value}</p><p id="organizationdisplay">${organization.value}</p><p id="jobtitledisplay">${jobtitle.value}</p><p id="notesdisplay">${notes.value}</p><button id="btn" type="save contact">Save Contact</button>
+                  <button id="btncancel" type="cancel">Cancel</button></> 
+                
+                    contactList.appendChild(plate);
+                
+            }
+            
+        }
+    </script>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+
+    <button id="btn" type="save contact">Save Contact</button>
+    <button id="btncancel" type="cancel">Cancel</button>
+    <footer>
+        <p>FOOTER COMES HERE</p>
+    </footer>
+</body>
+</html>
